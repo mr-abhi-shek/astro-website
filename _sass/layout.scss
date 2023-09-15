@@ -210,6 +210,7 @@ footer {
 	position: sticky;
 	top: 100%;
 
+
 	&, a {
 		color: #8e8e8e;
 	}
@@ -459,6 +460,7 @@ body{
 .darker {
 	background: #c9e5ef;
 	padding: 60px 0;
+	margin: 0 ;
 
 	
 }
@@ -607,12 +609,10 @@ body{
 	width: 40px;
 	border-radius: 50%;
 	transform: translateY(30px);
-	background-color: rgba(0, 0, 0, 0.1);
+	
 	transition: 0.2s;
   }
-  .nav-btn:hover {
-	background-color: rgba(0, 0, 0, 0.2);
-  }
+ 
   .nav-btn::after,
   .nav-btn::before {
 	font-size: 20px;

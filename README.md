@@ -1,4 +1,4 @@
-### Setting up for local development
+# Setting up for local development
 
 There are probably different ways to go about this, but sometimes what matters
 is to have one at all. Doing the following was tested by @consideRatio

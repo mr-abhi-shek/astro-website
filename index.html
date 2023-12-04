@@ -39,7 +39,8 @@ carousels:
 
 <div class="darker">
 	<div class="container">
-		<h2 class="editable brand3-txt">Updates</h2>
+		<h1 class="editable" style="text-align: center;"> Updates </h1>
+		<!--h2-- class="editable brand3-txt">Updates</!--h2-->
 		<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Update</a></p>
 		<div class="posts">
 			{% for post in site.posts limit:3 %}
@@ -147,19 +148,19 @@ carousels:
 		<li>
 			<div class="image">{% include icons/site.html icon="vision" %}</div>
 			<h3 class="editable">Vision</h3>
-			<p class="editable">{{site.data.company.vision }}  </p>
+			<p class="editable" style="font-size: 1.5rem;" >{{site.data.company.vision }}  </p>
 		</li>
 
 		<li>
 			<div class="image">{% include icons/site.html icon="mission" %}</div>
 			<h3 class="editable">Mission</h3>
-			<p class="editable">{{site.data.company.mission }} </p>
+			<p class="editable" style="font-size: 1.5rem;" >{{site.data.company.mission }} </p>
 		</li>
 
 		<li>
 			<div class="image">{% include icons/site.html icon="motto" %}</div>
 			<h3 class="editable">Values</h3>
-			<p class="editable">{{site.data.company.values }}  </p>
+			<p class="editable" style="font-size: 1.5rem;" >{{site.data.company.values }}  </p>
 		</li>
 	</ul>
 </div>
@@ -175,8 +176,9 @@ carousels:
 
 <div class="darker">
 	<div class="container">
-		<h2 class="editable">Volunteers / Internship </h2>
-		<p class="editable" style="text-align: center;">
+		<h1 class="editable" style="text-align: center;"> Volunteers / Internship </h1>
+		<!--h2 class="editable">Volunteers / Internship </h2-->
+		<p class="editable" style="text-align: center; font-size: 1.5rem;">
 			With more helping hands we can support more kids through our scholarship program. We need support in increasing reach to 
 			students, raising funds, mentoring, website maintenance, building partnerships, starting new initiatives etc. 
 			You don't have to make big commitments, a few hours every week goes a long way. Send us an email on  
@@ -184,10 +186,13 @@ carousels:
 		</p>
 		
 	   </br>
-	   <div align="center"> Or </div>
+	   <div align="center" style="font-size: 1.5rem;"> Or </div>
        </br>
-		<div class="button" align="center">
+		<!--div class="button" align="center">
 			<a href="{{site.data.company.whatsapp_link }}"> <i class="fa fa-whatsapp" aria-hidden="true" style="font-size : 20px ;""></i> &nbsp; &nbsp; Contact on Whatsapp </a>
+		</div-->
+		<div class="button1" align="center">
+			<a href="{{site.data.company.whatsapp_link }}"> <i class="fa fa-whatsapp" aria-hidden="true" style="font-size : 20px ;"></i> &nbsp; &nbsp; Contact on Whatsapp </a>
 		</div>
 		<br/>
 		<div class="button" align="center">

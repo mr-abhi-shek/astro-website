@@ -319,4 +319,19 @@ input[type="text"]{
   h3.section_title {
 	font-size: 35px;
 	color: #353535; }
-  
+	
+.button1 a{
+	display: inline-block;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 200ms ease-in background;
+	border: 2px solid #f1592a;
+    padding: 15px 40px;
+    box-sizing: content-box;
+    font-size: 1em;
+	background: #fff;
+    color: #F1592A;
+    cursor: pointer;
+    font-weight: bold;
+	transition-duration: 0.6s;
+}

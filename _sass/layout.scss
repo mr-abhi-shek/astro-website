@@ -463,10 +463,8 @@ body{
 
 .darker {
 	background: #c9e5ef;
-	padding: 60px 0;
-	margin: 0 ;
-
-	
+	padding: 60px 0px;
+	margin: 0 auto;	
 }
 
 .darker2 {
@@ -494,6 +492,9 @@ body{
 	}
 }
 
+.darker0{
+	padding: 20px 30px;
+}
 
 .accordion {
 	max-width: 1000px;
@@ -545,14 +546,14 @@ body{
 
 
 .testi-container {
-	
+
 	max-width: 800px;
 	margin: 0 auto; 
 	padding: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color:#F1592A;;
+	background-color:#F1592A;
 	max-height: fit-content;
   }
   .testimonial {
@@ -568,7 +569,7 @@ body{
   .testimonial .image {
 	height: 150px;
 	width: 150px;
-	border: 5px solid #fff; 
+	border: 5px solid #fff;
 	object-fit: cover;
 	border-radius: 50%;
   }

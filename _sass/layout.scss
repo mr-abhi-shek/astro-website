@@ -553,7 +553,7 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color:#F1592A;
+	background-color:#fff;
 	max-height: fit-content;
   }
   .testimonial {
@@ -569,7 +569,7 @@ body{
   .testimonial .image {
 	height: 150px;
 	width: 150px;
-	border: 5px solid #fff;
+	border: 5px solid #F1592A;
 	object-fit: cover;
 	border-radius: 50%;
   }
@@ -621,7 +621,7 @@ body{
   .nav-btn::after,
   .nav-btn::before {
 	font-size: 20px;
-	color: #fff;
+	color: #F1592A;
   }
   .swiper-pagination-bullet {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -641,7 +641,7 @@ body{
 	  .testimonial .image {
 		height: 120px;
 		width: 120px;
-		border: 5px solid #fff; 
+		border: 5px solid #F1592A; 
 		margin-top: 30px;
 		margin-bottom: 10px;
 		object-fit: cover;

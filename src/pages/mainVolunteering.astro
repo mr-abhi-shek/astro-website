@@ -3,14 +3,11 @@ import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
-import Hero from "../components/Home/Hero.astro";
-import Statistics from "../components/Home/Statistics.astro";
-import Programs from "../components/Home/Programs.astro";
-import Volunteer from "../components/Home/Volunteer.astro";
-import Updates from "../components/common/Updates.astro";
-import Partners from "../components/Home/Partners.astro";
-import Benefits from "../components/Home/Benefits.astro";
-import Supporters from "../components/Home/Supporters.astro";
+import Hero from "../components/Volunteering/Hero.astro";
+import WhyVolunteer from "../components/Volunteering/WhyVolunteer.astro";
+import ChooseVolunteering from "../components/Volunteering/ChooseVolunteering.astro";
+import WhyIntern from "../components/Volunteering/WhyIntern.astro";
+import ChooseIntern from "../components/Volunteering/ChooseIntern.astro";
 ---
 <script src="/assets/js/theme.min.js" is:inline></script>
 
@@ -150,14 +147,10 @@ AOS.init();
     <main class="page-wrapper">
       <Header/>
       <Hero/>
-      <Partners/>
-      <Benefits/>
-      <Statistics/>
-      <Programs/>
-      <Volunteer/>
-      <Updates showHighPriorityOnly={true} isMainPage={true}/>
-      <Partners/>
-      <Footer/>
+      <WhyVolunteer/>
+      <ChooseVolunteering/>
+      <WhyIntern/>
+      <ChooseIntern/>
     </main>
     
     <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">

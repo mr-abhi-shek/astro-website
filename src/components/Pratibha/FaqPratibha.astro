@@ -1,50 +1,94 @@
-<!DOCTYPE html>
+---
+import { getEntry } from "astro:content";
+const faqPratibha = (await getEntry("pratibha", "faqpratibha")).data;
+---
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Section</title>
-    <link rel="stylesheet" href="/assets/css/Pratibha/faq.css">
-</head>
-<body>
-    <div class="faq-container-c1">
-        <div class="faq-container-c2">
-            <h1 class="faq-title">Any questions? Check out the FAQ</h1>
-            <p class="faq-content">Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently.</p>
-        </div>
-        <div class="faq-container-c3">
-            <div class="faq-accordion">
-                <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FAQ Section</title>
+        <link rel="stylesheet" href="/assets/css/Pratibha/faq.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+    <body>
+        <div class="faq-container-c1">
+            <div class="faq-container-c2">
+                <h1 class="faq-title">{faqPratibha.title}</h1>
+                <p class="faq-content">{faqPratibha.paragraph}</p>
+                <div class="faq-image-content">
+                    <img src={faqPratibha.image} alt="vectorImage" />
                 </div>
-                <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. Can more than one student from the same family apply for KPS?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
-                </div>
-                <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. How long do you provide scholarship to the students?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
-                </div>
-                <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. What are the major check points for scholarship?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
-                </div>
-                <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. What is the expectation of Kiran Foundation from the students selected in KP?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+            </div>
+            <div class="faq-container-c3" style="margin-left:50px;">
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <div class="faq-accordion-question">
+                            {faqPratibha.question1}
+                            <img src="/assets/images/benefits/Chevron.png" 
+                            style="margin-left: 645px; margin-top:-105px"/>
+                        </div>
+                        <div class="faq-accordion-answer mt-5">
+                            {faqPratibha.answer1}
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <div class="faq-accordion-question">
+                            {faqPratibha.question2}
+                            <img src="/assets/images/benefits/Chevron1.png" 
+                            style="margin-left: 647px; margin-top:-60px"/>
+                        </div>
+                        <div class="faq-accordion-answer">
+                            {faqPratibha.answer2}
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <div class="faq-accordion-question">
+                            {faqPratibha.question3}
+                            <img src="/assets/images/benefits/Chevron.png" 
+                            style="margin-left: 647px; margin-top:-60px"/>
+                        </div>
+                        <div class="faq-accordion-answer">
+                            {faqPratibha.answer3}
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <div class="faq-accordion-question">
+                            {faqPratibha.question4}
+                            <img src="/assets/images/benefits/Chevron.png" 
+                            style="margin-left: 647px; margin-top:-65px"/>
+                        </div>
+                        <div class="faq-accordion-answer">
+                            {faqPratibha.answer4}
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <div class="faq-accordion-question">
+                            {faqPratibha.question5}
+                            <img src="/assets/images/benefits/Chevron.png" 
+                            style="margin-left: 647px; margin-top:-110px"/>
+                        </div>
+                        <div class="faq-accordion-answer mt-5">
+                            {faqPratibha.answer5}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        document.querySelectorAll('.faq-accordion-question').forEach(item => {
-            item.addEventListener('click', event => {
-                const accordionItem = item.parentNode;
-                accordionItem.classList.toggle('active');
-            });
-        });
-    </script>
-</body>
+        <script>
+            document
+                .querySelectorAll(".faq-accordion-question")
+                .forEach((item) => {
+                    item.addEventListener("click", (event) => {
+                        const accordionItem = item.parentNode;
+                        accordionItem.classList.toggle("active");
+                    });
+                });
+        </script>
+    </body>
 </html>

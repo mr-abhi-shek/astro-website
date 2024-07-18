@@ -1,38 +1,46 @@
 ---
-import TestimonialComponent from './TestimonialComponent.astro';
-import { remark } from 'remark';
-import html from 'remark-html';
+import TestimonialComponent from "./TestimonialComponent.astro";
 
+import { getEntry } from "astro:content";
+const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
+const common = (await getEntry("common", "common")).data;
 const { pageTag } = Astro.props;
-
-const testimonialsFile = import.meta.glob('/src/content/testimonials.md');
-
-const testimonialsData = await Promise.all(
-  Object.values(testimonialsFile).map(async (testimonialFile) => {
-    const { frontmatter, default: content } = await testimonialFile();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  })
+const testimonials = testimonialsData.testimonials.filter((testimonial) =>
+    testimonial.tags.includes(pageTag),
 );
-
-const testimonials = testimonialsData[0].testimonials.filter(testimonial => testimonial.tag === pageTag);
 ---
 
-<div class="carousel">
-    <div class="carousel-inner">
-        {testimonials.map((testimonial, index) => (
-            <div class="carousel-item" data-index={index}>
-                <TestimonialComponent {...testimonial} />
-            </div>
-        ))}
-    </div>
-    <div class="carousel-controls">
-        {Array(Math.ceil(testimonials.length / 2)).fill().map((_, index) => (
-            <span class="carousel-bullet" data-index={index}></span>
-        ))}
-    </div>
-</div>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TestimonialCarousel</title>
+    </head>
 
+    <body>
+        <div class="carousel" style="margin-bottom: 45px;">
+            <div class="carousel-inner">
+                {
+                    testimonials.map((testimonial, index) => (
+                        <div class="carousel-item mt-5" data-index={index}>
+                            <TestimonialComponent {...testimonial} />
+                        </div>
+                    ))
+                }
+            </div>
+            <div class="carousel-controls">
+                {
+                    Array(Math.ceil(testimonials.length / 2))
+                        .fill()
+                        .map((_, index) => (
+                            <span class="carousel-bullet" data-index={index} />
+                        ))
+                }
+            </div>
+        </div>
+    </body>
+</html>
 <style>
     .carousel {
         position: relative;
@@ -48,22 +56,22 @@ const testimonials = testimonialsData[0].testimonials.filter(testimonial => test
     }
 
     .carousel-item {
-        flex: 0 0 50%; 
-        width: 636px; 
-        height: 366px; 
+        flex: 0 0 50%;
+        width: 636px;
+        height: 460px;
         box-sizing: border-box;
         padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        overflow: hidden; 
+        overflow: hidden;
     }
 
     .carousel-controls {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        margin-top: 25px;
     }
 
     .carousel-bullet {
@@ -81,23 +89,23 @@ const testimonials = testimonialsData[0].testimonials.filter(testimonial => test
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const bullets = document.querySelectorAll('.carousel-bullet');
-        const inner = document.querySelector('.carousel-inner');
-        const items = document.querySelectorAll('.carousel-item');
+    document.addEventListener("DOMContentLoaded", () => {
+        const bullets = document.querySelectorAll(".carousel-bullet");
+        const inner = document.querySelector(".carousel-inner");
+        const items = document.querySelectorAll(".carousel-item");
         let currentIndex = 0;
 
         function updateCarousel() {
-            const offset = currentIndex * -100 / 2;
+            const offset = (currentIndex * -100) / 2;
             inner.style.transform = `translateX(${offset}%)`;
 
-            bullets.forEach(bullet => bullet.classList.remove('active'));
-            bullets[currentIndex].classList.add('active');
+            bullets.forEach((bullet) => bullet.classList.remove("active"));
+            bullets[currentIndex].classList.add("active");
         }
 
-        bullets.forEach(bullet => {
-            bullet.addEventListener('click', () => {
-                currentIndex = parseInt(bullet.getAttribute('data-index'));
+        bullets.forEach((bullet) => {
+            bullet.addEventListener("click", () => {
+                currentIndex = parseInt(bullet.getAttribute("data-index"));
                 updateCarousel();
             });
         });

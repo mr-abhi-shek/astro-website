@@ -2,13 +2,14 @@
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
 import Header from "../components/common/Header.astro";
+import DonationHero from "../components/Donation/donationHero.astro"
 import Membership from "../components/Donation/membership.astro";
 import MissionDonation from "../components/Donation/missionDonation.astro";
-import DonationHero from "../components/Donation/donationHero.astro";
-import DonationFaq from "../components/Donation/donationFaq.astro";
-import DonationStatistics from "../components/Donation/donationStatistics.astro";
-import DonationCard from "../components/Donation/donationCard.astro";
 import Footer from "../components/common/Footer.astro";
+import DonationStatistics from "../components/Donation/donationStatistics.astro";
+import DonationFaq from "../components/Donation/donationFaq.astro";
+import DonationCard from "../components/Donation/donationCard.astro";
+
 
 interface Props {
 	title: string;
@@ -166,12 +167,13 @@ AOS.init();
   <!-- Page wrapper -->
   <main class="page-wrapper">
     <Header/>
-     <DonationHero/>
-     <Membership/>
+    <DonationHero/>
+    <Membership/>
     <MissionDonation/>
-     <DonationStatistics/>
+    <DonationStatistics/>
     <DonationFaq/>
     <DonationCard/>
+    
     <Footer/>
   </main>
   

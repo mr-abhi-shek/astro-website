@@ -8,10 +8,10 @@ import Programs from "../components/Home/Programs.astro";
 import Volunteer from "../components/Home/Volunteer.astro";
 import Updates from "../components/common/Updates.astro";
 import Partners from "../components/Home/Partners.astro";
+import Values from "../components/Home/Values.astro";
 import Footer from "../components/common/Footer.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Heading from "../components/common/heading.astro";
-import Values from "../components/Home/Values.astro";
 
 ---
 
@@ -191,14 +191,16 @@ import Values from "../components/Home/Values.astro";
       <Hero />
       <Values />
       <Statistics />
+      <Heading title="Our Programs"/>
       <Programs />
       <Heading title="Testimonials"/>
       <TestimonialsCarousel pageTag="home"/>
+      <Heading title="Volunteer with Us"/>
+      <Volunteer/>
       <Updates showHighPriorityOnly={true} isMainPage={true} />
       <Partners />
       <Footer/>
-      
-    </main>
+      </main>
 
     <!-- Back to top button -->
     <a

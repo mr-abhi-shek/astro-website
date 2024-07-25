@@ -12,14 +12,13 @@ const appPratibha = (await getEntry("pratibha", "apppratibha")).data;
         <link rel="stylesheet" href="/assets/css/Pratibha/appPratibha.css" />
     </head>
     <body>
-        <div class="container app-component-c1" style="margin-top: 150px;">
+        <div class="container app-component-c1" style="width:1296px;">
             <div class="app-left-container">
                 {appPratibha.title}
             </div>
             <button class="app-download-button"
                 >{appPratibha.downloadAppbtn}</button
             >
-             <img src="/assets/images/programs/Groupicon.png" alt="GroupIcon" class="group-icon">
             <img src={appPratibha.image1} alt="Hero Image 1" class="image1" />
             <img src={appPratibha.image2} alt="Hero Image 2" class="image2" />
             <img src={appPratibha.image3} alt="Hero Image 3" class="image3" />

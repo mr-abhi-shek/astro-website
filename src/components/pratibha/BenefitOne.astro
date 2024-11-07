@@ -1,35 +1,44 @@
 ---
-import { getEntry } from 'astro:content'
-const benefits = (await getEntry('pratibha', 'benefits')).data
+import { getEntry } from "astro:content";
+const benefits = (await getEntry("pratibha", "benefits")).data;
 ---
 
-<div class='aboutPratibha-container-c1 container' style='margin-top: 45px;'>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.tutionfee} alt='Icon' />
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <!-- Benefit 1: Tuition Fee -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-right"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.tutionfee} alt="Tuition Fee Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.tution}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.tution}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.tution}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.tution}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.stationary} alt='Icon' />
+
+    <!-- Benefit 2: Stationary -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-down"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.stationary} alt="Stationary Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.stationary}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.stationary}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.stationary}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.stationary}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.equipment} alt='Icon' />
+
+    <!-- Benefit 3: Equipment -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-up"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.equipment} alt="Equipment Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.equipments}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.equipments}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.equipments}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.equipments}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.bording} alt='Icon' />
+
+    <!-- Benefit 4: Boarding -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-left"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width:100px; height: 100px;">
+        <img src={benefits.image.bording} alt="Boarding Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.bording}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.bording}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.bording}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.bording}</p>
   </div>
 </div>

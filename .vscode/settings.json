@@ -1,3 +1,6 @@
 {
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "chat.editor.wordWrap": "on",
+    "html.format.wrapAttributesIndentSize": 25,
+    "editor.wordWrap": "on"
 }
